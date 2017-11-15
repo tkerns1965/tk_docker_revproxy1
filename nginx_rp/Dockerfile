@@ -8,4 +8,4 @@ COPY index.html /usr/share/nginx/html/
 
 COPY hello_cron /etc/cron.d/
 
-# RUN crontab /etc/cron.d/hello_cron
+RUN crontab /etc/cron.d/hello_cron

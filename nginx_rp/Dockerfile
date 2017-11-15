@@ -7,3 +7,5 @@ COPY nginx.conf /etc/nginx/
 COPY index.html /usr/share/nginx/html/
 
 COPY hello_cron /etc/periodic/15min/
+
+CMD ["crond", "-f"]

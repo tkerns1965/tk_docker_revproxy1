@@ -6,8 +6,4 @@ RUN rm /etc/nginx/nginx.conf && \
 COPY nginx.conf /etc/nginx/
 COPY index.html /usr/share/nginx/html/
 
-COPY hello_cron /etc/cron.d/
-
-RUN crontab /etc/cron.d/hello_cron
-
-CMD ["cron", "-f"]
+COPY hello_cron /etc/periodic/15min/

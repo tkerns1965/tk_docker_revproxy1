@@ -1,1 +1,26 @@
+version: "3"
 
+services:
+    nginx_rp:
+        build: nginx_rp
+        image: img_revproxy1_rp
+        container_name: cnt_revproxy1_rp
+        ports:
+            - "80:80"
+            - "443:443"
+        depends_on:
+            - nginx_web1
+            - nginx_web2
+        restart: always
+
+    nginx_web1:
+        build: nginx_web1
+        image: img_revproxy1_web1
+        container_name: cnt_revproxy1_web1
+        restart: always
+
+    nginx_web2:
+        build: nginx_web2
+        image: img_revproxy1_web2
+        container_name: cnt_revproxy1_web2
+        restart: always

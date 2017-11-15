@@ -9,5 +9,6 @@ COPY index.html /usr/share/nginx/html/
 COPY hello_cron /etc/periodic/15min/
 
 COPY startup.sh .
+RUN chmod +x startup.sh
 
 CMD ["./startup.sh"]

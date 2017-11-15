@@ -24,7 +24,3 @@ services:
         image: img_revproxy1_web2
         container_name: cnt_revproxy1_web2
         restart: always
-
-networks:
-    default:
-        name: net_revproxy1

@@ -4,4 +4,5 @@ echo "certbot finish script"
 # if [ $RUN_EXIT_CODE -ne 0 ]; then
 #     echo $RUN_EXIT_CODE
 # fi
-exit 125
+# exit 125
+s6-svc -d certbot

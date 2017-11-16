@@ -6,3 +6,4 @@ echo "certbot finish script"
 # fi
 # exit 125
 s6-svc -d certbot
+echo "s6-svc -d certbot = "$?

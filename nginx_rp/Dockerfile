@@ -17,5 +17,7 @@ COPY s6 /s6
 COPY root /etc/crontabs/
 COPY nginx.conf /etc/nginx/
 COPY index.html /usr/share/nginx/html/
+COPY startup.sh .
 
-CMD ["s6-svscan", "/s6"]
+# CMD ["s6-svscan", "/s6"]
+CMD ["./startup.sh"]

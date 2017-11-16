@@ -5,6 +5,7 @@ RUN apk update && \
     mkdir /var/www && \
     mkdir /var/www/html && \
     mkdir /var/log/s6 && \
+    mkdir /var/log/s6/certbot && \
     mkdir /var/log/s6/cron && \
     mkdir /var/log/s6/nginx && \
     rm /etc/crontabs/root && \

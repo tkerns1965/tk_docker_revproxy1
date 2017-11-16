@@ -1,4 +1,5 @@
 #!/bin/sh
+echo "certbot finish script"
 # RUN_EXIT_CODE=$1
 # if [ $RUN_EXIT_CODE -ne 0 ]; then
 #     echo $RUN_EXIT_CODE

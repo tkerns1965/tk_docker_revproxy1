@@ -1,15 +1,12 @@
 FROM nginx:1.13.6-alpine
 
-RUN rm /etc/nginx/nginx.conf && \
+RUN apk update && \
+    apk add s6 && \
+    rm /etc/nginx/nginx.conf && \
     rm /usr/share/nginx/html/index.html
 
 COPY nginx.conf /etc/nginx/
 COPY index.html /usr/share/nginx/html/
+COPY s6 /s6
 
-COPY hello_cron .
-RUN crontab hello_cron
-
-COPY startup.sh .
-RUN chmod +x startup.sh
-
-CMD ["./startup.sh"]
+CMD ["s6-svscan", "/s6"]

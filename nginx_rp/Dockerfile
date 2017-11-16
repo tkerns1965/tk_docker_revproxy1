@@ -8,5 +8,6 @@ RUN apk update && \
 COPY nginx.conf /etc/nginx/
 COPY index.html /usr/share/nginx/html/
 COPY s6 /s6
+COPY root /etc/crontabs/
 
 CMD ["s6-svscan", "/s6"]

@@ -11,12 +11,9 @@ RUN apk update && \
     rm /etc/nginx/nginx.conf && \
     rm /usr/share/nginx/html/index.html
 
-# rm /etc/crontabs/root && \
-
 COPY s6               /root/s6
 COPY certbot_renew.sh /root/
 COPY crontab_certbot  /root/
-# COPY root             /etc/crontabs/
 COPY nginx.conf       /etc/nginx/
 COPY index.html       /usr/share/nginx/html/
 

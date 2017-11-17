@@ -5,5 +5,5 @@ echo "certbot finish script"
 #     echo $RUN_EXIT_CODE
 # fi
 # exit 125
-s6-svc -O certbot
-echo "s6-svc -d certbot = "$?
+s6-svc -O /s6/certbot
+echo "s6-svc -O /s6/certbot = "$?

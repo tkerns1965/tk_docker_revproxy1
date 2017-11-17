@@ -1,9 +1,3 @@
 #!/bin/sh
-echo "certbot finish script"
-# RUN_EXIT_CODE=$1
-# if [ $RUN_EXIT_CODE -ne 0 ]; then
-#     echo $RUN_EXIT_CODE
-# fi
-# exit 125
 s6-svc -O /s6/certbot
-echo "s6-svc -O /s6/certbot = "$?
+echo "certbot first run complete"

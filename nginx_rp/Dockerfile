@@ -8,14 +8,18 @@ RUN apk update && \
     mkdir /var/log/s6/certbot && \
     mkdir /var/log/s6/cron && \
     mkdir /var/log/s6/nginx && \
-    rm /etc/crontabs/root && \
     rm /etc/nginx/nginx.conf && \
     rm /usr/share/nginx/html/index.html
 
-COPY s6 /root/s6
+# rm /etc/crontabs/root && \
+
+COPY s6               /root/s6
 COPY certbot_renew.sh /root/
-COPY root /etc/crontabs/
-COPY nginx.conf /etc/nginx/
-COPY index.html /usr/share/nginx/html/
+COPY crontab_certbot  /root/
+# COPY root             /etc/crontabs/
+COPY nginx.conf       /etc/nginx/
+COPY index.html       /usr/share/nginx/html/
+
+RUN crontab /root/crontab_certbot
 
 CMD ["s6-svscan", "/root/s6"]

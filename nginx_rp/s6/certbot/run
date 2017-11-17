@@ -1,3 +1,4 @@
 #!/bin/sh
+s6-svc -O /s6/certbot
 exec certbot certonly --webroot -n --staging --dry-run --agree-tos -m tony.kerns.65@gmail.com -w /var/www/html -d tkhome.ignorelist.com,owncloud.tkhome.ignorelist.com
-s6-svc -d certbot
+echo "certbot first run complete"

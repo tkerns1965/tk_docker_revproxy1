@@ -6,4 +6,4 @@
 0       3       *       *       6       run-parts /etc/periodic/weekly
 0       5       1       *       *       run-parts /etc/periodic/monthly
 # *       *       *       *       *       echo "Hello cron! $(date)"
-*/5     *       *       *       *       ./certbot_renew.sh
+*/5     *       *       *       *       certbot_renew.sh

@@ -1,3 +1,2 @@
 #!/bin/sh
 echo "certbot first run complete"
-echo $?

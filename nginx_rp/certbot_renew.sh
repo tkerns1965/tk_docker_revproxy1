@@ -1,3 +1,4 @@
 #!/bin/sh
-# certbot certonly -n --staging --dry-run -d tkhome.ignorelist.com,owncloud.tkhome.ignorelist.com
-certbot renew
+# certbot certonly --webroot -n --staging --dry-run -w /var/www/html -d tkhome.ignorelist.com,owncloud.tkhome.ignorelist.com
+certbot renew --staging --dry-run
+# certbot renew

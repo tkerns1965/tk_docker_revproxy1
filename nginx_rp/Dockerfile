@@ -20,6 +20,6 @@ COPY crontab_certbot  /root/
 COPY nginx.conf       /etc/nginx/
 COPY index.html       /usr/share/nginx/html/
 
-RUN crontab /root/crontab_certbot
+# RUN crontab /root/crontab_certbot
 
 CMD ["s6-svscan", "/root/s6"]

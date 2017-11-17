@@ -18,4 +18,4 @@ COPY root /etc/crontabs/
 COPY nginx.conf /etc/nginx/
 COPY index.html /usr/share/nginx/html/
 
-CMD ["s6-svscan", "/s6"]
+CMD ["s6-svscan", "/root/s6"]

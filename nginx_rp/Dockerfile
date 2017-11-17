@@ -11,12 +11,11 @@ RUN apk update && \
     rm /etc/nginx/nginx.conf && \
     rm /usr/share/nginx/html/index.html
 
-COPY s6               /root/s6
-COPY certbot_renew.sh /root/
-COPY crontab_certbot  /root/
-COPY nginx.conf       /etc/nginx/
-COPY index.html       /usr/share/nginx/html/
+COPY s6                     /s6
+COPY root/*                 /root/
+COPY etc_nginx/*            /etc/nginx/
+COPY usr_share_nginx_html/* /usr/share/nginx/html/
 
 RUN (crontab -l ; cat /root/crontab_certbot) | crontab -
 
-CMD ["s6-svscan", "/root/s6"]
+CMD ["s6-svscan", "/s6"]
